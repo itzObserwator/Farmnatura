@@ -1,0 +1,142 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
+import { navigation, contact, site } from "@/content/site";
+export default function Header() {
+  const pathname = usePathname();
+  const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const close = () => {
+    dialog.current?.close();
+    setOpen(false);
+    trigger.current?.focus();
+  };
+  useEffect(() => {
+    dialog.current?.close();
+    setExpanded(false);
+  }, [pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+  useEffect(() => {
+    const click = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest(".header-explore")) setExpanded(false);
+    };
+    window.addEventListener("click", click);
+    return () => window.removeEventListener("click", click);
+  }, []);
+  return (
+    <>
+      <header className="site-header reference-header">
+        <span className="header-tagline">Growing rooted lives</span>
+        <Link href="/" className="brand reference-brand" aria-label="Farm Natura home">
+          farmnatura
+        </Link>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          <Link href="/about-us" aria-current={pathname === "/about-us" ? "page" : undefined}>
+            About
+          </Link>
+          <div className="header-explore">
+            <button
+              aria-expanded={expanded}
+              aria-controls="explore-dropdown"
+              onClick={() => setExpanded(!expanded)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") setExpanded(false);
+              }}
+            >
+              Explore <ChevronDown size={12} />
+            </button>
+            {expanded && (
+              <div id="explore-dropdown" className="explore-dropdown">
+                {navigation
+                  .filter((item) => item.href !== "/about-us")
+                  .map((item) => (
+                    <Link href={item.href} key={item.href} onClick={() => setExpanded(false)}>
+                      {item.title}
+                    </Link>
+                  ))}
+              </div>
+            )}
+          </div>
+          <Link href="/contact" aria-current={pathname === "/contact" ? "page" : undefined}>
+            Contact
+          </Link>
+        </nav>
+        <button
+          ref={trigger}
+          className="menu-toggle"
+          aria-label="Open navigation"
+          aria-haspopup="dialog"
+          aria-expanded={open}
+          onClick={() => {
+            dialog.current?.showModal();
+            setOpen(true);
+          }}
+        >
+          <Menu size={26} />
+        </button>
+      </header>
+      <dialog
+        ref={dialog}
+        className="menu-dialog reference-menu"
+        aria-label="Site navigation"
+        onClose={() => setOpen(false)}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) close();
+        }}
+      >
+        <div className="menu-top">
+          <Link href="/" className="reference-brand" onClick={close}>
+            farmnatura
+          </Link>
+          <button className="icon-button" onClick={close} aria-label="Close navigation">
+            <X />
+          </button>
+        </div>
+        <div className="menu-content">
+          <nav aria-label="Expanded navigation">
+            <Link href="/" onClick={close}>
+              Homepage
+            </Link>
+            {navigation.map((item) => (
+              <Link
+                href={item.href}
+                key={item.href}
+                onClick={close}
+                aria-current={pathname === item.href ? "page" : undefined}
+              >
+                {item.title}
+                <ArrowUpRight />
+              </Link>
+            ))}
+            <Link href="/contact" onClick={close}>
+              Contact <ArrowUpRight />
+            </Link>
+          </nav>
+          <div className="menu-infos">
+            <p>Phone</p>
+            <a href={contact.phoneHref}>{site.phone}</a>
+            <p>The estate</p>
+            <span>
+              Kandukur, Srisailam Highway
+              <br />
+              Near Hyderabad, Telangana
+            </span>
+            <p>Our Hyderabad office</p>
+            <span>{contact.office}</span>
+          </div>
+        </div>
+      </dialog>
+    </>
+  );
+}

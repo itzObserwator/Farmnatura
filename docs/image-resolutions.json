@@ -1,0 +1,122 @@
+[
+  {
+    "file": "orchard-retina.jpg",
+    "source": "source-assets/retina/fnsi2.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi2.jpeg",
+    "original": {
+      "width": 1600,
+      "height": 720
+    },
+    "output": {
+      "width": 5760,
+      "height": 2592
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 3888919
+  },
+  {
+    "file": "farm-care-retina.jpg",
+    "source": "source-assets/retina/fnsi3.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi3.jpeg",
+    "original": {
+      "width": 1600,
+      "height": 720
+    },
+    "output": {
+      "width": 5760,
+      "height": 2592
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 4348192
+  },
+  {
+    "file": "pavilion-retina.jpg",
+    "source": "source-assets/retina/fnsi5.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi5.jpeg",
+    "original": {
+      "width": 1600,
+      "height": 1067
+    },
+    "output": {
+      "width": 5760,
+      "height": 3841
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 3970583
+  },
+  {
+    "file": "farmhouse-garden-retina.jpg",
+    "source": "source-assets/retina/fnsi6.jpg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi6.jpg",
+    "original": {
+      "width": 1920,
+      "height": 1080
+    },
+    "output": {
+      "width": 5760,
+      "height": 3240
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 6541243
+  },
+  {
+    "file": "goshala-retina.jpg",
+    "source": "source-assets/retina/fnsi1.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi1.jpeg",
+    "original": {
+      "width": 1280,
+      "height": 853
+    },
+    "output": {
+      "width": 5760,
+      "height": 3839
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 3785931
+  },
+  {
+    "file": "farmhouse-retina.jpg",
+    "source": "source-assets/retina/svg-highlight-img-0.png",
+    "url": "https://www.farmnatura.in/svg/highlight-img.svg",
+    "original": {
+      "width": 2400,
+      "height": 1200
+    },
+    "output": {
+      "width": 5760,
+      "height": 2880
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 3716659
+  },
+  {
+    "file": "home-retina.jpg",
+    "source": "source-assets/images/home.jpg",
+    "url": "https://www.farmnatura.in/home/building1.jpg",
+    "original": {
+      "width": 1293,
+      "height": 862
+    },
+    "output": {
+      "width": 5760,
+      "height": 3840
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 3666799
+  },
+  {
+    "file": "farm-collage.png",
+    "source": "source-assets/images/farm-collage.png",
+    "url": null,
+    "original": {
+      "width": 1000,
+      "height": 1000
+    },
+    "output": {
+      "width": 3840,
+      "height": 3840
+    },
+    "method": "Source-preserving Lanczos3 upscale",
+    "bytes": 29146725
+  }
+]

@@ -1,0 +1,45 @@
+import Link from "next/link";
+import { Photo } from "@/components/ui/Primitives";
+import { contact, navigation, site } from "@/content/site";
+export default function Footer() {
+  return (
+    <footer className="site-footer reference-footer">
+      <div className="footer-info">
+        <nav aria-label="Footer navigation">
+          <Link href="/">Homepage</Link>
+          {navigation.map((item) => (
+            <Link href={item.href} key={item.href}>
+              {item.title}
+            </Link>
+          ))}
+          <Link href="/contact">Contact</Link>
+        </nav>
+        <div>
+          <p>Phone</p>
+          <a href={contact.phoneHref}>{site.phone}</a>
+        </div>
+        <div>
+          <p>The estate</p>
+          <span>
+            Kandukur, Srisailam Highway
+            <br />
+            Near Hyderabad, Telangana
+          </span>
+          <p className="office-label">Office</p>
+          <span>{contact.office}</span>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>{new Date().getFullYear()} © Farm Natura</span>
+        <span>By Planet Green Infra</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+      <div className="footer-landscape" data-parallax>
+        <Photo src="orchard-retina.jpg" alt="The Farm Natura landscape" sizes="100vw" />
+        <Link href="/" className="footer-wordmark" aria-label="Farm Natura home">
+          farmnatura
+        </Link>
+      </div>
+    </footer>
+  );
+}

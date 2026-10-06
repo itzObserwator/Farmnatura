@@ -1,0 +1,174 @@
+import { Photo, ButtonLink } from "@/components/ui/Primitives";
+import HomeStory from "./HomeStory";
+import EstateTabs from "./EstateTabs";
+import VisitBanner from "./VisitBanner";
+
+const values = [
+  {
+    title: "Living soil",
+    subtitle: "Good things begin beneath our feet",
+    text: "Six-plus years of soil revitalisation and attention to soil health form the foundation of Farm Natura’s natural-farming approach.",
+  },
+  {
+    title: "Indigenous seeds",
+    subtitle: "A connection to our farming heritage",
+    text: "Native and heirloom seeds connect cultivation to the local climate, with seasonal crops and fruit-bearing trees across the farm.",
+  },
+  {
+    title: "Managed with care",
+    subtitle: "A team by your side",
+    text: "Dedicated agronomy staff care for everyday farming. The estate offers four years of managed maintenance; ask the team for the terms for your plot.",
+  },
+  {
+    title: "Rooted communities",
+    subtitle: "Land that becomes part of your story",
+    text: "A place for families to return to, enjoy together, and pass on. Our vision brings farm ownership and a closer relationship with nature into everyday life.",
+  },
+];
+
+function BotanicalCutout({
+  kind,
+  className,
+}: {
+  kind: "flower" | "leaf" | "sun";
+  className: string;
+}) {
+  return (
+    <svg viewBox="0 0 200 200" className={`botanical-cutout ${className}`} aria-hidden="true">
+      {kind === "flower" ? (
+        <path
+          d="M82 0h37l15 42 46-9 20 34-32 33 32 34-20 33-46-9-15 42H82l-16-42-45 9-21-33 33-34L0 67l21-34 45 9Z M86 81l-9 20 15 19 26-5 7-21-15-17Z"
+          fillRule="evenodd"
+        />
+      ) : kind === "leaf" ? (
+        <path d="M25 185C15 50 56 12 174 12c21 116-41 147-130 156l-10 24Z M35 169 153 37" />
+      ) : (
+        <path d="m100 0 17 35 34-23 3 42 41-3-23 34 28 15-35 17 23 34-42 3 3 41-34-23-15 28-17-35-34 23-3-42-41 3 23-34L0 100l35-17-23-34 42-3-3-41 34 23Z" />
+      )}
+    </svg>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <div className="reference-home">
+      <HomeStory />
+      <section id="land-film" className="reference-film">
+        <div className="film-image" data-parallax>
+          <Photo
+            src="orchard-retina.jpg"
+            alt="Orchard trees and cultivated soil at Farm Natura in Kandukur"
+            sizes="100vw"
+          />
+          <span className="film-location">Farm Natura · Kandukur, Hyderabad</span>
+        </div>
+        <p className="film-caption">
+          Our land is where the story begins. Natural farming, seasonal cultivation, and everyday
+          care come together across 110+ acres in Kandukur.
+        </p>
+      </section>
+      <EstateTabs />
+      <section className="reference-intro" data-reveal>
+        <h2>
+          We believe a relationship with the earth can change the way we live. A piece of land to
+          care for. A place for your family to return to. At Farm Natura, we bring natural farming
+          and managed farmland together, so that a life closer to nature can become part of your
+          own.
+        </h2>
+        <ButtonLink href="/about-us">About Farm Natura</ButtonLink>
+      </section>
+      <section className="reference-portrait" aria-label="Life on the farm">
+        <BotanicalCutout kind="flower" className="cutout-one" />
+        <BotanicalCutout kind="sun" className="cutout-two" />
+        <BotanicalCutout kind="leaf" className="cutout-three" />
+        <BotanicalCutout kind="flower" className="cutout-four" />
+        <div className="portrait-photo" data-parallax>
+          <Photo
+            src="pavilion-retina.jpg"
+            alt="A farmhouse veranda at Farm Natura"
+            sizes="(max-width: 760px) 64vw, 34vw"
+          />
+        </div>
+        <div className="portrait-inserts">
+          <span>A living farm</span>
+          <span>
+            KANDUKUR, HYDERABAD
+            <br />
+            BY PLANET GREEN INFRA
+          </span>
+          <span>A rooted life</span>
+        </div>
+      </section>
+      <section className="reference-split">
+        <article>
+          <div className="split-photo" data-parallax>
+            <Photo
+              src="farm-care-retina.jpg"
+              alt="Farm Natura’s team working among planted fields"
+            />
+          </div>
+          <p>
+            Behind every growing farm is everyday care. Our agronomy team looks after the land and
+            its seasonal cultivation, helping families enjoy a lasting connection to a farm of their
+            own.
+          </p>
+        </article>
+        <article>
+          <div className="split-photo" data-parallax>
+            <Photo
+              src="farmhouse-garden-retina.jpg"
+              alt="A stone Farm Natura farmhouse set among growing plants"
+            />
+          </div>
+          <p>
+            Life here makes room for open skies, a quiet walk, and an unhurried weekend. Bring your
+            family, get to know the land, and discover what your own farm life could feel like.
+          </p>
+        </article>
+      </section>
+      <section className="reference-values">
+        <h2 className="visually-hidden">Our values</h2>
+        <div className="value-headings" aria-hidden="true">
+          {values.map((value, index) => (
+            <div className="value-heading" key={value.title} data-value-index={index}>
+              {[...value.title].map((letter, i) => (
+                <span key={i} className="value-letter">
+                  {letter}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className="value-stories">
+          {values.map((value, index) => (
+            <article key={value.title} className="value-story" data-value-story={index}>
+              <span className="diamond" aria-hidden="true">
+                ✦
+              </span>
+              <h3>{value.title}</h3>
+              <p className="value-subtitle">{value.subtitle}</p>
+              <p>{value.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="reference-film closing-film">
+        <div className="film-image" data-parallax>
+          <Photo
+            src="farmhouse-retina.jpg"
+            alt="Farm Natura’s stone farmhouse with a veranda and lawn"
+            sizes="100vw"
+          />
+        </div>
+      </section>
+      <div className="reference-marquee" aria-label="Indulge, involve, impact nature">
+        <div aria-hidden="true">
+          {[0, 1, 2, 3].map((index) => (
+            <span key={index}>Indulge. Involve. Impact nature. — </span>
+          ))}
+        </div>
+      </div>
+      <VisitBanner />
+    </div>
+  );
+}

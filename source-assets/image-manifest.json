@@ -1,0 +1,50 @@
+[
+  {
+    "file": "orchard-retina.jpg",
+    "source": "source-assets/retina/fnsi2.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi2.jpeg",
+    "longEdge": 5760
+  },
+  {
+    "file": "farm-care-retina.jpg",
+    "source": "source-assets/retina/fnsi3.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi3.jpeg",
+    "longEdge": 5760
+  },
+  {
+    "file": "pavilion-retina.jpg",
+    "source": "source-assets/retina/fnsi5.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi5.jpeg",
+    "longEdge": 5760
+  },
+  {
+    "file": "farmhouse-garden-retina.jpg",
+    "source": "source-assets/retina/fnsi6.jpg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi6.jpg",
+    "longEdge": 5760
+  },
+  {
+    "file": "goshala-retina.jpg",
+    "source": "source-assets/retina/fnsi1.jpeg",
+    "url": "https://www.farmnatura.in/images/gallery/fnsi1.jpeg",
+    "longEdge": 5760
+  },
+  {
+    "file": "farmhouse-retina.jpg",
+    "source": "source-assets/retina/svg-highlight-img-0.png",
+    "url": "https://www.farmnatura.in/svg/highlight-img.svg",
+    "longEdge": 5760
+  },
+  {
+    "file": "home-retina.jpg",
+    "source": "source-assets/images/home.jpg",
+    "url": "https://www.farmnatura.in/home/building1.jpg",
+    "longEdge": 5760
+  },
+  {
+    "file": "farm-collage.png",
+    "source": "source-assets/images/farm-collage.png",
+    "url": null,
+    "longEdge": 3840
+  }
+]

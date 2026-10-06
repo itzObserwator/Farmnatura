@@ -1,0 +1,12 @@
+export default function SideRails() {
+  return (
+    <div className="side-rails" aria-hidden="true">
+      <div className="rail rail-left">
+        <span className="rail-fill" />
+      </div>
+      <div className="rail rail-right">
+        <span className="rail-fill" />
+      </div>
+    </div>
+  );
+}
